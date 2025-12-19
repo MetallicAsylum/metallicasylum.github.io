@@ -1,0 +1,61 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.grid-viewport {
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+}
+
+#grid-container {
+    display: grid;
+    gap: 1px;
+    background-color: #ff8d8d;
+    padding: 1px;
+    /* Remove grid-auto-flow: column and other auto properties */
+    /* These will be set by JavaScript */
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Each block is a grid container */
+.block {
+    display: grid !important;
+    grid-template-columns: repeat(2, 10px) !important;
+    grid-template-rows: repeat(2, 10px) !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: #DDD !important;
+    /* Prevent any stretching or collapsing */
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+}
+/* Quadrants are grid items */
+.quadrant {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #AAA !important;
+    display: block !important;
+}
+
+.quadrant.active {
+    background-color: #D77 !important;
+}
